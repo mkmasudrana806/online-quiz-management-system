@@ -1,0 +1,36 @@
+.quiz-Cart{
+text-align: center;
+}
+.question-card{
+    margin: 0 auto;
+    background-color: gray;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: #00000012 0px 1px 2px, #00000012 0px 2px 4px, #00000012 0px 4px 8px, #00000012 0px 8px 16px, #00000012 0px 16px 32px, #00000012 0px 32px 64px;
+    width: 80%;
+    height: auto;
+}
+.question-text{
+    color:blue;
+}
+ul{
+    list-style: none;
+padding-left: 0px;
+}
+li{
+    background-color: darkgray;
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.correct{
+    background-color: greenyellow;
+}
+
+.wrong{
+    background-color: #f76060;
+}
