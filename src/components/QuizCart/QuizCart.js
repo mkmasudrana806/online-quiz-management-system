@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { NavLink, useLoaderData } from "react-router-dom";
 import "./QuizCart.css";
 
 const QuizCart = () => {
@@ -11,7 +11,7 @@ const QuizCart = () => {
 
   const [quiz, setQuiz] = useState(0);
   const [score, setScroe] = useState(0);
-  const [currentQuestion, setCurrentQuestion] = useState(1);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
 
   //   parse the option html to string
   const parser = new DOMParser();
@@ -20,22 +20,26 @@ const QuizCart = () => {
     "text/html"
   ).body.innerText;
 
+  const changeQuestion = (num) => {
+    setCurrentQuestion(num);
+  };
+
+  //   const [isCorrect, setIsCorrect] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   const CheckAnswer = (option) => {
-    // console.log(option);
-
     if (questions[currentQuestion].correctAnswer === option) {
       console.log("yes milse");
-      isCorrect(true);
+      setIsCorrect(true);
     } else {
       console.log("no mile nai");
-      isCorrect(false);
+      setIsCorrect(false);
     }
   };
+
   return (
     <div className="quiz-Cart">
       <h1>5Min Quiz Test</h1>
-      <h2>Current Score : {score}</h2>
+      {/* <h2>Current Score : {score}</h2> */}
       <div className="question-card">
         <h2>
           Question {currentQuestion + 1} out of {total}
@@ -47,6 +51,13 @@ const QuizCart = () => {
           })}
         </ul>
       </div>
+      <button>
+        <NavLink to="/">Main Menu</NavLink>
+      </button>
+      <button onClick={() => changeQuestion(currentQuestion - 1)}>
+        Previous
+      </button>
+      <button onClick={() => changeQuestion(currentQuestion + 1)}>Next</button>
     </div>
   );
 };

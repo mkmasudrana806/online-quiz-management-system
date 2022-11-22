@@ -1,6 +1,10 @@
 .quiz-Cart{
 text-align: center;
 }
+.quiz-Cart button{
+    padding: 8px;
+    font-weight: bold;
+}
 .question-card{
     margin: 0 auto;
     background-color: gray;
@@ -32,5 +36,9 @@ li{
 }
 
 .wrong{
-    background-color: #f76060;
+    background-color: darkgray;
+}
+
+.quiz{
+    text-align: center;
 }

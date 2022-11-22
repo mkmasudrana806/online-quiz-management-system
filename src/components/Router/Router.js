@@ -5,6 +5,7 @@ import RaodMap from "../AuthorSection/RaodMap";
 import Blog from "../Blogs/Blog";
 import Home from "../Home/Home";
 import Main from "../Main/Main";
+import Quiz from "../QuizCart/Quiz";
 import QuizCart from "../QuizCart/QuizCart";
 import QuizCategory from "../QuizCategory/QuizCategory";
 
@@ -20,8 +21,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/quiz",
-        loader: () => fetch("https://openapi.programming-hero.com/api/quiz"),
-        element: <QuizCategory></QuizCategory>,
+        element: <Quiz></Quiz>
       },
       {
         path: "/blogs",
