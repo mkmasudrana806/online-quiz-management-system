@@ -1,0 +1,50 @@
+.author-container{
+    background-color:gray;
+    display: flex;
+    margin-top: 20px;
+}
+
+.author-profile{
+    display: flex;
+    align-items: center;
+}
+.author-profile p{
+    margin: 3px;
+    margin-left: 5px;
+    color: white;
+}
+.author-profile img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    padding: 5px;
+}
+.author-profile button{
+    color: rgb(119, 0, 255);
+    font-weight: bold;
+    font-size: 15px;
+    background-color: bisque;
+    border: 0;
+}
+
+
+.author-personal-blogs{
+display: flex;
+margin-left: 50px;
+align-items: center;
+}
+.author-personal-blogs a{
+    margin-left: 100px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 17px;
+    color: rgb(32, 32, 241)
+}
+
+.site-heading{
+    color: indigo;
+}
+.site-info{
+    font-size: 23px;
+    text-align: center;
+}

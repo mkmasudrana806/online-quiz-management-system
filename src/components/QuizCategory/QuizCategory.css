@@ -1,0 +1,21 @@
+.quizCategory{
+    display: flex;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.quizCategory img{
+   width: 150px;
+   height: 150px;
+   background-color:rgb(82, 8, 255);
+   border-radius: 10px;
+}
+.quizCategory p, h3,button{
+    margin: 8px;
+}
+
+.quizCategoryInfo{
+margin-left: 20px;
+}
+button a{
+text-decoration: none;
+}
