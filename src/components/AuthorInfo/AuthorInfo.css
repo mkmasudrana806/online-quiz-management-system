@@ -29,12 +29,12 @@
 
 
 .author-personal-blogs{
+    width: 100%;
 display: flex;
-margin-left: 50px;
+justify-content: space-around;
 align-items: center;
 }
 .author-personal-blogs a{
-    margin-left: 100px;
     text-decoration: none;
     font-weight: bold;
     font-size: 17px;
@@ -55,11 +55,24 @@ align-items: center;
         padding: 10px;
     }
     .author-personal-blogs{
-        margin-left: 0px;
         flex-wrap: wrap;
+        justify-content: space-around;
         }
         .author-personal-blogs a{
             margin-left: 15px;
         }
-        
+}
+
+@media screen and (min-width:571px) and (max-width:860px){
+   .author-container{
+    flex-direction: column;
+    padding: 10px;
+   }
+   .author-personal-blogs{
+    margin-left: 0px;
+    flex-wrap: wrap;
+    }
+}
+@media screen and (min-width:861px) and (max-width:991px){
+
 }

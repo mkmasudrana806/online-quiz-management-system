@@ -18,3 +18,23 @@
         grid-template-columns: repeat(1, 1fr);
     }
 }
+
+@media screen and (min-width:571px) and (max-width:860px) {
+    .home-section{
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+    .categoriesQuizCart{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+ @media screen and (min-width:861px) and (max-width:991px) {
+    .home-section{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    .categoriesQuizCart{
+        grid-template-columns: repeat(2, 1fr);
+    }
+} 

@@ -8,6 +8,7 @@ import Main from "../Main/Main";
 import Quiz from "../QuizCart/Quiz";
 import QuizCart from "../QuizCart/QuizCart";
 import QuizCategory from "../QuizCategory/QuizCategory";
+import Statictics from "../Statictics/Statictics";
 
 export const router = createBrowserRouter([
   {
@@ -21,7 +22,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/quiz",
-        element: <Quiz></Quiz>
+        element: <Quiz></Quiz>,
+      },
+      {
+        path: "/statistics",
+        element: <Statictics></Statictics>,
       },
       {
         path: "/blogs",

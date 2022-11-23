@@ -10,7 +10,7 @@ const AuthorInfo = () => {
       <div className="author-container">
       <div className="author-profile">
         <img src={owner} alt="" />
-        <div>
+        <div className="author-information">
           <p>Masud Rana</p>
           <p>Junior Web Developer</p>
           <p>
