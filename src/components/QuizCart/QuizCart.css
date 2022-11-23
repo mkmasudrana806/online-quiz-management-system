@@ -30,15 +30,30 @@ li{
     margin-top: 10px;
     cursor: pointer;
 }
-
-.correct{
-    background-color: greenyellow;
+li:hover{
+    color: blue;
+    background-color: rgba(255, 255, 255, 0.575);
 }
 
-.wrong{
-    background-color: darkgray;
-}
 
 .quiz{
     text-align: center;
+}
+.noOFQuiz{
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.message-color{
+    color: blue;
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+.right-icon{
+    color: blue;
+    font-weight: bold;
+}
+.wrong-icon{
+    color: red;
+    font-weight: bold;
 }
