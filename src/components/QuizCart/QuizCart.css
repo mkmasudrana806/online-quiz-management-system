@@ -1,11 +1,29 @@
 .quiz-Cart{
 text-align: center;
 }
+.quiz-title{
+    margin-bottom: 0px;
+}
+.score-board{
+    display: flex;
+    justify-content: center;
+
+}
 .quiz-Cart button{
     padding: 8px;
     font-weight: bold;
 }
 .question-card{
+    margin: 0 auto;
+    background-color: gray;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: #00000012 0px 1px 2px, #00000012 0px 2px 4px, #00000012 0px 4px 8px, #00000012 0px 8px 16px, #00000012 0px 16px 32px, #00000012 0px 32px 64px;
+    width: 80%;
+    height: auto;
+}
+
+.final-result{
     margin: 0 auto;
     background-color: gray;
     padding: 15px;
@@ -56,4 +74,21 @@ li:hover{
 .wrong-icon{
     color: red;
     font-weight: bold;
+}
+
+.answer-show{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   height: 30px;
+}
+.ans-icons{
+    margin-left: 50px;
+    color: rgb(77, 55, 35);
+    font-size: 20px;
+}
+.open-ans{
+    margin-left: 50px;
+    color: blue;
+    font-size: 20px;
 }

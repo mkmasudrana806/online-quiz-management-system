@@ -10,9 +10,12 @@ const Home = () => {
     <div className="home-section">
       <AuthorInfo></AuthorInfo>
       <div className="categoriesQuizCart">
-        {
-            data.map(quizTopics => <QuizCategory key={quizTopics.id} quizTopics={quizTopics}></QuizCategory>)
-        }
+        {data.map((quizTopics) => (
+          <QuizCategory
+            key={quizTopics.id}
+            quizTopics={quizTopics}
+          ></QuizCategory>
+        ))}
       </div>
     </div>
   );
