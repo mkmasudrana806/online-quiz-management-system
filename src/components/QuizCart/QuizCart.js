@@ -19,13 +19,13 @@ const QuizCart = () => {
   // useState react hooks
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [message, setMessage] = useState(mess);
-  const [score, setScore] = useState(0);
   const [right, setRight] = useState(0);
   const [wrong, setWrong] = useState(0);
-  const [showinalResult, setFinalResult] = useState(false);
+  const [solved, setTotalSolved] = useState(0);
   const [givenQuestion, setGivenQuestion] = useState([]);
   const [asnwerIcon, setAnswerIcon] = useState(ansIcon);
   const [answerStatus, setAnswerStatus] = useState(false);
+  const [showinalResult, setFinalResult] = useState(true);
 
   // change the eye incon ans show answer when user click to it to see answer
   const changeAnsIcon = (status) => {
@@ -58,8 +58,8 @@ const QuizCart = () => {
     "text/html"
   ).body.innerText;
 
-  // verify the answer with user clicked option, then suitable message show below
-  //set score, right and wrong number
+  //check clicked option with actual option,then suitable message show
+  //set total solved, right and wrong answer
   const CheckAnswer = (option) => {
     // check clicked question already given or not
     const exits = givenQuestion.find(
@@ -83,8 +83,8 @@ const QuizCart = () => {
           </p>
         );
         setMessage(mess);
-        setScore(score + 1);
         setRight(right + 1);
+        setTotalSolved(solved + 1);
       } else {
         mess = (
           <p className="message-color">
@@ -96,6 +96,7 @@ const QuizCart = () => {
         );
         setMessage(mess);
         setWrong(wrong + 1);
+        setTotalSolved(solved + 1);
       }
     }
   };
@@ -132,17 +133,18 @@ const QuizCart = () => {
   const setQuiz = () => {
     setCurrentQuestion(0);
     setFinalResult(false);
-    setScore(0);
     setRight(0);
     setWrong(0);
+    setTotalSolved(0);
   };
 
+  const successRate = ((right / solved) * 100).toFixed(2);
   // main component for the quiz
   return (
     <div className="quiz-Cart">
       <h2 className="quiz-title">Quiz of {data.name}</h2>
       <div className="score-board">
-        <h3>Current Score: {score}</h3>
+        <h3>Total Solved: {solved}</h3>
         <h3>Right : {right}</h3>
         <h3>Wrong: {wrong}</h3>
       </div>
@@ -151,7 +153,8 @@ const QuizCart = () => {
         <div className="final-result">
           {/* final result cart  */}
           <h2>Final Result</h2>
-          <p>1 Out of 5 Correct - (20)%</p>
+          <h3>Total Question Solved: {right + wrong}</h3>
+          <p className="success-rate">Success Rate : {isNaN(successRate) ? "0" : successRate}%</p>
           <button>
             <NavLink to="/">Go To Main Menu</NavLink>
           </button>
