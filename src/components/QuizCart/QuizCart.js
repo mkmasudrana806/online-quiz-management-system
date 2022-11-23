@@ -2,8 +2,6 @@ import {
   faCircleCheck,
   faEye,
   faEyeSlash,
-  faL,
-  faLaptopHouse,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,23 +12,22 @@ import "./QuizCart.css";
 const QuizCart = () => {
   // receive data and destructure this data
   const { data } = useLoaderData();
-  console.log(data);
   const { total, questions } = data;
-  console.log(questions);
+  let mess;
+  let ansIcon = <FontAwesomeIcon icon={faEye}></FontAwesomeIcon>;
 
   // useState react hooks
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  let mess;
   const [message, setMessage] = useState(mess);
   const [score, setScore] = useState(0);
   const [right, setRight] = useState(0);
   const [wrong, setWrong] = useState(0);
   const [showinalResult, setFinalResult] = useState(false);
-
-  // change the eye incon ans show answer when user click to it to see answer
-  let ansIcon = <FontAwesomeIcon icon={faEye}></FontAwesomeIcon>;
+  const [givenQuestion, setGivenQuestion] = useState([]);
   const [asnwerIcon, setAnswerIcon] = useState(ansIcon);
   const [answerStatus, setAnswerStatus] = useState(false);
+
+  // change the eye incon ans show answer when user click to it to see answer
   const changeAnsIcon = (status) => {
     if (status) {
       ansIcon = <FontAwesomeIcon icon={faEyeSlash}></FontAwesomeIcon>;
@@ -54,23 +51,6 @@ const QuizCart = () => {
     }
   };
 
-  // // change the eye incon ans show answer when user click to it to see answer
-  // let ansIcon = <FontAwesomeIcon icon={faEye}></FontAwesomeIcon>;
-  // const [asnwerIcon, setAnswerIcon] = useState(ansIcon);
-  // const changeAnsIcon = () => {
-  //   ansIcon = <FontAwesomeIcon icon={faEyeSlash}></FontAwesomeIcon>;
-  //   setAnswerIcon(ansIcon);
-  //   mess = (
-  //     <p className="message-color">
-  //       <span className="right-icon">
-  //         <FontAwesomeIcon icon={faCircleCheck}></FontAwesomeIcon> Right,
-  //       </span>{" "}
-  //       Ans: {questions[currentQuestion].correctAnswer}
-  //     </p>
-  //   );
-  //   setMessage(mess);
-  // };
-
   //   parse the option html to string
   const parser = new DOMParser();
   const questionName = parser.parseFromString(
@@ -78,45 +58,73 @@ const QuizCart = () => {
     "text/html"
   ).body.innerText;
 
+  // verify the answer with user clicked option, then suitable message show below
+  //set score, right and wrong number
+  const CheckAnswer = (option) => {
+    // check clicked question already given or not
+    const exits = givenQuestion.find(
+      (ques) => ques === questions[currentQuestion].correctAnswer
+    );
+    if (!exits) {
+      let newGivenQuestion = [];
+      newGivenQuestion = [
+        ...givenQuestion,
+        questions[currentQuestion].correctAnswer,
+      ];
+      setGivenQuestion(newGivenQuestion);
+      // if not given,then check option right or wrong
+      if (questions[currentQuestion].correctAnswer === option) {
+        mess = (
+          <p className="message-color">
+            <span className="right-icon">
+              <FontAwesomeIcon icon={faCircleCheck}></FontAwesomeIcon> Right,
+            </span>{" "}
+            Ans: {option}
+          </p>
+        );
+        setMessage(mess);
+        setScore(score + 1);
+        setRight(right + 1);
+      } else {
+        mess = (
+          <p className="message-color">
+            <span className="wrong-icon">
+              <FontAwesomeIcon icon={faXmark}></FontAwesomeIcon> Wrong!,
+            </span>{" "}
+            Ans: {questions[currentQuestion].correctAnswer}
+          </p>
+        );
+        setMessage(mess);
+        setWrong(wrong + 1);
+      }
+    }
+  };
+
   // change the question when user press desire option ( previous and next )
   const changeQuestion = (num) => {
     if (num >= 0 && num < questions.length) {
       setMessage("");
       setCurrentQuestion(num);
-      setAnswerIcon(ansIcon);
-    } else if (num == questions.length) {
+
+      // when user next or previous button will clicked,then check change question  already given or not, if given,show message
+      const exits = givenQuestion.find(
+        (ques) => ques === questions[num].correctAnswer
+      );
+      if (exits) {
+        mess = (
+          <p>
+            <span className="taken-message-color">
+              <FontAwesomeIcon icon={faCircleCheck}></FontAwesomeIcon> Taken,
+              Ans: {questions[num].correctAnswer}
+            </span>
+          </p>
+        );
+        setMessage(mess);
+      }
+    } else if (num === questions.length) {
       setFinalResult(true);
     } else {
       alert("there is no question yet");
-    }
-  };
-
-  // verify the answer with user clicked option, then suitable message show below
-  //set score, right and wrong number
-  const CheckAnswer = (option) => {
-    if (questions[currentQuestion].correctAnswer === option) {
-      mess = (
-        <p className="message-color">
-          <span className="right-icon">
-            <FontAwesomeIcon icon={faCircleCheck}></FontAwesomeIcon> Right,
-          </span>{" "}
-          Ans: {option}
-        </p>
-      );
-      setMessage(mess);
-      setScore(score + 1);
-      setRight(right + 1);
-    } else {
-      mess = (
-        <p className="message-color">
-          <span className="wrong-icon">
-            <FontAwesomeIcon icon={faXmark}></FontAwesomeIcon> Wrong!,
-          </span>{" "}
-          Ans: {questions[currentQuestion].correctAnswer}
-        </p>
-      );
-      setMessage(mess);
-      setWrong(wrong + 1);
     }
   };
 
@@ -132,7 +140,7 @@ const QuizCart = () => {
   // main component for the quiz
   return (
     <div className="quiz-Cart">
-      <h2 className="quiz-title">5Min Quiz Test</h2>
+      <h2 className="quiz-title">Quiz of {data.name}</h2>
       <div className="score-board">
         <h3>Current Score: {score}</h3>
         <h3>Right : {right}</h3>
