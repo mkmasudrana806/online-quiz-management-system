@@ -1,0 +1,28 @@
+.blogs{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.blog{
+    background-color: darkgray;
+padding: 10px;
+margin-top: 20px;
+}
+h3{
+    color: blue;
+}
+p{
+    font-size: 18px;
+}
+@media screen and (max-width:570px) {
+    .blogs{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (min-width:571px) and (max-width:860px) {
+    .blogs{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}

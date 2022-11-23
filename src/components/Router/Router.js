@@ -7,8 +7,8 @@ import Home from "../Home/Home";
 import Main from "../Main/Main";
 import Quiz from "../QuizCart/Quiz";
 import QuizCart from "../QuizCart/QuizCart";
-import QuizCategory from "../QuizCategory/QuizCategory";
 import Statictics from "../Statictics/Statictics";
+import "./Route.css";
 
 export const router = createBrowserRouter([
   {
@@ -57,6 +57,6 @@ export const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <div>This page not Found: 404</div>,
+    element: <div className="not-found">This page is not Found 404</div>,
   },
 ]);
