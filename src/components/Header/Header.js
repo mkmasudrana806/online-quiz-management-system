@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Header.css";
+
 const Header = () => {
   return (
     <div>
@@ -9,18 +10,38 @@ const Header = () => {
           <NavLink to="/">Smart Learning</NavLink>
         </h2>
         <div className="nav-items">
-          <NavLink className={({ isActive }) =>
-              isActive ? 'activeClassName' : undefined
-            }  to="/">Home</NavLink>
-          <NavLink className={({ isActive }) =>
-              isActive ? 'activeClassName' : undefined
-            } to="/quiz">Quiz</NavLink>
-          <NavLink className={({ isActive }) =>
-              isActive ? 'activeClassName' : undefined
-            } to="/statistics">Statistics</NavLink>
-          <NavLink className={({ isActive }) =>
-              isActive ? 'activeClassName' : undefined
-            } to="/blogs">Blogs</NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "activeClassName" : undefined
+            }
+            to="/"
+          >
+            Home
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "activeClassName" : undefined
+            }
+            to="/quiz"
+          >
+            Quiz
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "activeClassName" : undefined
+            }
+            to="/statistics"
+          >
+            Statistics
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "activeClassName" : undefined
+            }
+            to="/blogs"
+          >
+            Blogs
+          </NavLink>
         </div>
       </nav>
     </div>

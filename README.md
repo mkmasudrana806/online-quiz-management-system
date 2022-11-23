@@ -1,70 +1,41 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is an "Online QUIZ WEB APPLICATION" Projects. mainly a single page web application
+Github Link: https://github.com/programming-hero-web-course2/b6-quiz-crackerz-mkmasudrana806
+Live Site Link: https://splendorous-marigold-c20867.netlify.app/
 
-## Available Scripts
+### Objective of this projects
 
-In the project directory, you can run:
+1. Familiar with react Router and HOOKS and some logic.
+2. Dynamic Route Create and Data Load, understand about Outlet Layout
 
-### `npm start`
+### Using Technology
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+There are many technology i have used to build this porjects, like HTML, CSS, JS AND REACT with some librery and framworks.
+like React HOOKS, React Router etc.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Features of this This Projects
 
-### `npm test`
+1. Real time Leader borad
+2. Real Time Success Rate
+3. Next and previous going button
+4. Right , Wrong Features
+5. After end of the quiz, one can see his Quiz success rate
+6. Right , Wrong Show after cliking one option
+7. Answer show features
+8. one question one time chance
+9. etc.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Hidden Features Explained
 
-### `npm run build`
+when user clicked right option,then below will show message with right answer.but when user will click wrong answer below will show wrong with correct answer.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+when user reach end of the quiz, automatically percentage of right answer page will show. user can see his right and wrong answer.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+suppose user take one question.then he go to the next question.but he want to back, when he will back to previous question,if previous question already done, then below one message will show that this question is taken.
+etc features i have implemented in this projects
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Description
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+in this projects i have implemented many thing, i and have covered some topics that is very important like react hooks, react router and dynamic data load and dynamic path create. i have implemented nested router under main components.
+in this projects i have created many components and i am trying to do my best. sub nav section just nothing but a nested route under home components. when user will click unknown route,it will show 404 page not found message.

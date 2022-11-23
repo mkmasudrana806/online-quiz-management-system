@@ -22,7 +22,7 @@ const QuizCart = () => {
   const [right, setRight] = useState(0);
   const [wrong, setWrong] = useState(0);
   const [solved, setTotalSolved] = useState(0);
-  const [givenQuestion, setGivenQuestion] = useState([]);
+  const [takenQuestion, setTakenQuestion] = useState([]);
   const [asnwerIcon, setAnswerIcon] = useState(ansIcon);
   const [answerStatus, setAnswerStatus] = useState(false);
   const [showinalResult, setFinalResult] = useState(false);
@@ -62,16 +62,16 @@ const QuizCart = () => {
   //set total solved, right and wrong answer
   const CheckAnswer = (option) => {
     // check clicked question already given or not
-    const exits = givenQuestion.find(
+    const exits = takenQuestion.find(
       (ques) => ques === questions[currentQuestion].correctAnswer
     );
     if (!exits) {
       let newGivenQuestion = [];
       newGivenQuestion = [
-        ...givenQuestion,
+        ...takenQuestion,
         questions[currentQuestion].correctAnswer,
       ];
-      setGivenQuestion(newGivenQuestion);
+      setTakenQuestion(newGivenQuestion);
       // if not given,then check option right or wrong
       if (questions[currentQuestion].correctAnswer === option) {
         mess = (
@@ -108,7 +108,7 @@ const QuizCart = () => {
       setCurrentQuestion(num);
 
       // when user next or previous button will clicked,then check change question  already given or not, if given,show message
-      const exits = givenQuestion.find(
+      const exits = takenQuestion.find(
         (ques) => ques === questions[num].correctAnswer
       );
       if (exits) {
@@ -139,6 +139,7 @@ const QuizCart = () => {
   };
 
   const successRate = ((right / solved) * 100).toFixed(2);
+
   // main component for the quiz
   return (
     <div className="quiz-Cart">

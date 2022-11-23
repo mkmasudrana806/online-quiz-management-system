@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./QuizCategory.css";
+
 const QuizCategory = ({ quizTopics }) => {
   const { id, name, logo, total } = quizTopics;
   return (
@@ -17,7 +18,6 @@ const QuizCategory = ({ quizTopics }) => {
         <button>
           <NavLink to={`/quiz/${id}`}>Start Quiz</NavLink>
         </button>
-        {/* <button><NavLink to='/quiz'>Start Quiz</NavLink></button> */}
       </div>
     </div>
   );

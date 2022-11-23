@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import AuthorInfo from "../AuthorInfo/AuthorInfo";
 import QuizCategory from "../QuizCategory/QuizCategory";
 import "./Home.css";
+
 const Home = () => {
   const allQuizTopics = useLoaderData();
   const { data } = allQuizTopics;
