@@ -48,3 +48,18 @@ align-items: center;
     font-size: 23px;
     text-align: center;
 }
+
+@media screen and (max-width:570px){
+    .author-container{
+        flex-direction: column;
+        padding: 10px;
+    }
+    .author-personal-blogs{
+        margin-left: 0px;
+        flex-wrap: wrap;
+        }
+        .author-personal-blogs a{
+            margin-left: 15px;
+        }
+        
+}

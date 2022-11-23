@@ -25,7 +25,7 @@ const QuizCart = () => {
   const [givenQuestion, setGivenQuestion] = useState([]);
   const [asnwerIcon, setAnswerIcon] = useState(ansIcon);
   const [answerStatus, setAnswerStatus] = useState(false);
-  const [showinalResult, setFinalResult] = useState(true);
+  const [showinalResult, setFinalResult] = useState(false);
 
   // change the eye incon ans show answer when user click to it to see answer
   const changeAnsIcon = (status) => {
@@ -154,7 +154,9 @@ const QuizCart = () => {
           {/* final result cart  */}
           <h2>Final Result</h2>
           <h3>Total Question Solved: {right + wrong}</h3>
-          <p className="success-rate">Success Rate : {isNaN(successRate) ? "0" : successRate}%</p>
+          <p className="success-rate">
+            Success Rate : {isNaN(successRate) ? "0" : successRate}%
+          </p>
           <button>
             <NavLink to="/">Go To Main Menu</NavLink>
           </button>

@@ -19,3 +19,9 @@ margin-left: 20px;
 button a{
 text-decoration: none;
 }
+
+@media screen and (max-width:570px) {
+    .quizCategory img{
+        height: 100%;
+    }
+}

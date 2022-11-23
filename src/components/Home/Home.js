@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import AuthorInfo from "../AuthorInfo/AuthorInfo";
 import QuizCategory from "../QuizCategory/QuizCategory";
 import "./Home.css";
