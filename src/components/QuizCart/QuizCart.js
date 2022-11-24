@@ -136,6 +136,9 @@ const QuizCart = () => {
     setRight(0);
     setWrong(0);
     setTotalSolved(0);
+    mess = "";
+    setMessage(mess);
+    setTakenQuestion([]);
   };
 
   const successRate = ((right / solved) * 100).toFixed(2);
